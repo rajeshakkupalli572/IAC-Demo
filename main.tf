@@ -17,11 +17,12 @@ terraform {
 }
 
 provider "azurerm" {
-  subscription_id = "6912d7a0-bc28-459a-9407-33bbba641c07"
-  tenant_id = "70c0f6d9-7f3b-4425-a6b6-09b47643ec58"
-  client_id = "fb3eb97c-8679-488e-a4b4-5fd90299b7a2"
-  client_secret = "38o8Q~MsAPo59FK.Zsq0eQImB-vW2wrJznAUqc9V"
-  features {}  
+  # Configuration options
+  subscription_id = "29c659fd-44c2-46a7-87a7-c58a633162a2"
+  tenant_id = "46518d63-ca92-42e9-81b8-6018def8c2fe"
+  client_id = "fc676bc1-fe67-4e56-a816-77b2df0bb577"
+  client_secret = "Nr68Q~UYQdk46s8jarVUFsO3a~q5tpHonW5ZUbT1"
+  features {}
 }
 
 locals {
