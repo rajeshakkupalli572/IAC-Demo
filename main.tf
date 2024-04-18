@@ -58,9 +58,9 @@ resource "azurerm_virtual_network" "appnetwork" {
   resource_group_name = local.resource_group_name
   address_space       = [local.virtual_network.address_space]  
   
-   depends_on = [
+   /*depends_on = [
      azurerm_resource_group.appgrp
-   ]
+   ]*/
   }
 
 
@@ -105,9 +105,9 @@ resource "azurerm_public_ip" "appip" {
   resource_group_name = local.resource_group_name
   location            = local.location
   allocation_method   = "Static"
- depends_on = [
+ /*depends_on = [
    azurerm_resource_group.appgrp
- ]
+ ]*/
 }
 
 resource "azurerm_network_security_group" "appnsg" {
@@ -127,9 +127,9 @@ resource "azurerm_network_security_group" "appnsg" {
     destination_address_prefix = "*"
   }
 
-  depends_on = [
+  /*depends_on = [
     azurerm_resource_group.appgrp
-  ]
+  ]*/
 }
 
 resource "azurerm_subnet_network_security_group_association" "appnsglink" {
@@ -161,6 +161,6 @@ resource "azurerm_windows_virtual_machine" "appvm" {
   }
   depends_on = [
     azurerm_network_interface.appinterface,
-    azurerm_resource_group.appgrp
+    #azurerm_resource_group.appgrp
   ]
 }
