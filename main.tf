@@ -32,6 +32,7 @@ locals {
     name="app-network"
     address_space="10.0.0.0/16"
   }
+  
 
   subnets=[
     {
@@ -45,11 +46,12 @@ locals {
   ]
 }
 
+/*
 resource "azurerm_resource_group" "appgrp" {
   name     = local.resource_group_name
   location = local.location  
 }
-
+*/
 resource "azurerm_virtual_network" "appnetwork" {
   name                = local.virtual_network.name
   location            = local.location
